@@ -1,0 +1,91 @@
+/* styles.css */
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #444;
+}
+nav {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #4CAF50;
+}
+.content {
+    padding: 50px 20px;
+    text-align: center;
+    line-height: 1.6;
+}
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 1.1em;
+    color: #555;
+}
+/* Home Page */
+.home-content {
+    background: linear-gradient(to bottom right, #4CAF50, #2E7D32);
+    color: white;
+    padding: 100px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.home-content h1 {
+    color: white;
+}
+/* CSS Animation */
+.animated-box {
+    width: 120px;
+    height: 120px;
+    background-color: #FF9800;
+    border-radius: 8px;
+    animation: bounce 2s infinite;
+    margin: 20px auto;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+/* SVG Animation */
+.svg-container svg {
+    margin: 20px auto;
+    display: block;
+}
+/* Canvas Animation */
+canvas {
+    border: 1px solid #ddd;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* About Page */
+.about-content img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

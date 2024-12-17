@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #444;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #4CAF50;
+        }
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        /* Home Page */
+        .home-content {
+            background: linear-gradient(to bottom right, #4CAF50, #2E7D32);
+            color: white;
+            padding: 100px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .home-content h1 {
+            color: white;
+        }
+        /* CSS Animation */
+        .animated-box {
+            width: 120px;
+            height: 120px;
+            background-color: #FF9800;
+            border-radius: 8px;
+            animation: bounce 2s infinite;
+            margin: 20px auto;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+        /* SVG Animation */
+        .svg-container svg {
+            margin: 20px auto;
+            display: block;
+        }
+        /* Canvas Animation */
+        canvas {
+            border: 1px solid #ddd;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* About Page */
+        .about-content img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll("nav a");
+            const pages = {
+                'index.html': '.home-content',
+                'css.html': '.css-content',
+                'svg.html': '.svg-content',
+                'canvas.html': '.canvas-content',
+                'about.html': '.about-content'
+            };
+
+            function loadPage(page) {
+                document.querySelectorAll('.content > div').forEach(div => div.classList.remove('active'));
+                document.querySelector(pages[page]).classList.add('active');
+            }
+
+            links.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const page = e.target.getAttribute("href");
+                    loadPage(page);
+                });
+            });
+
+            loadPage('index.html'); // Load home page by default
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="Gideon.html">Home</a>
+        <a href="css.html">CSS</a>
+        <a href="svg.html">SVG</a>
+        <a href="canvas.html">Canvas</a>
+        <a href="about.html">About the Author</a>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="home-content active">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Discover unique and interactive designs created using CSS, SVG, and Canvas.</p>
+        </div>
+        <div class="css-content">
+            <h1>CSS Animation</h1>
+            <p>This box showcases a smooth bounce animation.</p>
+            <div class="animated-box"></div>
+        </div>
+        <div class="svg-content">
+            <h1>SVG Animation</h1>
+            <p>Dynamic SVG graphics in action!</p>
+            <div class="svg-container">
+                <svg width="150" height="150">
+                    <circle cx="75" cy="75" r="40" stroke="#FF5722" stroke-width="4" fill="none">
+                        <animate attributeName="stroke-dasharray" from="0, 251.2" to="251.2, 0" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
+            </div>
+        </div>
+        <div class="canvas-content">
+            <h1>Canvas Animation</h1>
+            <p>Animated circle bouncing back and forth on Canvas.</p>
+            <canvas id="myCanvas" width="300" height="150"></canvas>
+            <script>
+                const canvas = document.getElementById('myCanvas');
+                const ctx = canvas.getContext('2d');
+                let x = 0;
+                let dx = 2;
+                function draw() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.beginPath();
+                    ctx.arc(x, 75, 20, 0, Math.PI * 2);
+                    ctx.fillStyle = "#FF4081";
+                    ctx.fill();
+                    x += dx;
+                    if (x + 20 > canvas.width || x - 20 < 0) dx = -dx;
+                    requestAnimationFrame(draw);
+                }
+                draw();
+            </script>
+        </div>
+        <div class="about-content">
+            <h1>About the Author</h1>
+            <img src="https://via.placeholder.com/150" alt="Author Image">
+            <p>Hi, I’m a passionate web designer specializing in interactive and dynamic web experiences. Let’s create something amazing together!</p>
+        </div>
+    </div>
+</body>
+</html>
