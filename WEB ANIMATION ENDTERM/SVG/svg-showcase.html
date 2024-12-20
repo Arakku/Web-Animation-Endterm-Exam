@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Showcase</title>
+    <link rel="stylesheet" href="svg-style.css">
+</head>
+<body>
+    <!-- SVG Showcase Section -->
+    <section id="svg-showcase">
+        <h1>SVG Showcase</h1>
+        <p>Examples of my creative SVG animations, showcasing dynamic and scalable graphics.</p>
+        <div class="svg-container">
+            <!-- Animated Circle -->
+            <div class="svg-box">
+                <svg viewBox="0 0 100 100" class="circle-svg">
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="#6a11cb" stroke-width="5">
+                        <animate attributeName="r" from="10" to="40" dur="1.5s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
+                <p>SVG Circle</p>
+            </div>
+
+            <!-- Animated Line -->
+            <div class="svg-box">
+                <svg viewBox="0 0 100 100" class="line-svg">
+                    <line x1="10" y1="50" x2="90" y2="50" stroke="#ff512f" stroke-width="5">
+                        <animate attributeName="x2" from="10" to="90" dur="1s" repeatCount="indefinite" />
+                    </line>
+                </svg>
+                <p>SVG Line</p>
+            </div>
+
+            <!-- Animated Polygon -->
+            <div class="svg-box">
+                <svg viewBox="0 0 100 100" class="polygon-svg">
+                    <polygon points="50,15 90,85 10,85" fill="none" stroke="#16a085" stroke-width="5">
+                        <animate attributeName="points" 
+                            from="50,15 90,85 10,85" 
+                            to="15,50 85,90 85,10" 
+                            dur="2s" repeatCount="indefinite" />
+                    </polygon>
+                </svg>
+                <p>SVG Polygon</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

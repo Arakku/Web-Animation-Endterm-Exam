@@ -1,0 +1,294 @@
+/* Reset and Base Styling */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    max-width: 2000px;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    width: 200;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #1c1c1c;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #1c1c1c;
+    border-bottom: 2px solid #1c1c1c;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #ddd;
+    background-color: #1e1e1e;
+    font-family:'Times New Roman', Times, serif ;
+}
+
+/* Header */
+header {
+    background-color: #1e1e1e;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-right: 2rem;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #6a11cb;
+    transition: color 0.3s ease;
+}
+
+/* Showcase Section */
+#showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    background-color: #111;
+}
+
+#showcase h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+#showcase p {
+    font-size: 1.5rem;
+    color: #fdfdfd;
+}
+
+.showcase-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+/* Section Boxes */
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+    color: #ddd;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.829);
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #000000;
+}
+
+section p {
+    font-size: 1rem;
+    color: #000000;
+}
+
+/* Showcase Section Boxes */
+#css, #svg, #canvas {
+    margin: 1rem auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 500px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(230, 228, 228, 0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Add animation to the CSS section */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+#css {
+    margin: 1rem auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(229, 233, 230, 0.815);
+    transition: transform 0.3s ease;
+    animation: fadeIn 1s ease-in-out; 
+}
+
+/* Hover effect */
+#css:hover {
+    transform: translateY(-5px);
+    animation: bounce 0.5s ease-in-out; 
+}
+
+/* Keyframe for initial fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Canvas Showcase Animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+    }
+    100% {
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@keyframes canvasGlow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.5);
+    }
+}
+
+#canvas {
+    margin: 1rem auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(230, 227, 227, 0.795);
+    animation: pulse 2s infinite ease-in-out; 
+    transition: transform 0.3s ease;
+}
+
+/* Canvas hover effect */
+#canvas:hover {
+    transform: translateY(-5px);
+}
+
+/* Canvas element animation */
+#interactiveCanvas {
+    width: 100%;
+    height: 150px;
+    display: block;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border-radius: 5px;
+    animation: canvasGlow 3s infinite ease-in-out; 
+}
+
+
+
+#css:hover, #svg:hover, #canvas:hover {
+    transform: translateY(-5px);
+}
+
+#about-author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vw;
+    background-color: #111;
+    color: #fff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem; 
+    padding: 2rem;
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgb(231, 231, 231); 
+    max-width: 1000px;
+    width: 100%;
+}
+
+.author-image {
+    max-width: 200px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+    flex: 1; 
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+}
+
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 0.8rem;
+}
